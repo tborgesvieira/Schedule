@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApplication.Hubs;
 using WebApplication.Logic;
 using WebApplication.Service;
 
@@ -25,6 +26,7 @@ namespace WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSignalR();
             services.AddSingleton<RandomStringProvider>();
             services.AddSingleton<IHostedService, DataRefreshService>();
         }
@@ -51,6 +53,8 @@ namespace WebApplication
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapHub<UpdateHub>("/updateHub");
             });
         }
     }
