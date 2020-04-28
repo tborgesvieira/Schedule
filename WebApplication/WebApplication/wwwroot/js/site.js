@@ -3,12 +3,9 @@
 
 // Write your JavaScript code.
 
-"use strict";
-
 var connection = new signalR.HubConnectionBuilder().withUrl("/updateHub").build();
 
-connection.on("ReceiveMessage", function (message) {
-    console.log(message);
+connection.on("ReceiveMessage", function (message) {    
     document.getElementById("update").innerHTML = message;
 });
 

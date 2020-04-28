@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using WebApplication.Hubs;
-using WebApplication.Logic;
+using WebApplication.Provider;
 
 namespace WebApplication.Service
 {

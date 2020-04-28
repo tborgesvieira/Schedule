@@ -1,20 +1,19 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WebApplication.Logic
+namespace WebApplication.Provider
 {
     public class RandomStringProvider
     {
         private const string RandomStringUri = "https://www.random.org/strings/?num=1&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new";
-        
+
         private readonly HttpClient _httpClient;
 
         public RandomStringProvider()
         {
-            _httpClient = new HttpClient();            
+            _httpClient = new HttpClient();
         }
 
         public async Task UpdateString(CancellationToken cancellationToken)

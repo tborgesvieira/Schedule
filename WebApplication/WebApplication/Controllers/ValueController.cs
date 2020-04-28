@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication.Logic;
+using WebApplication.Provider;
 
 namespace WebApplication.Controllers
 {
